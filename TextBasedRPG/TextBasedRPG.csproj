@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C829BE9-2F8E-4CEB-A4D2-B888A7B8B74E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TextBasedRPG</RootNamespace>
+    <AssemblyName>TextBasedRPG</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\Actions.cs" />
+    <Compile Include="Engine\DECISIONS.cs" />
+    <Compile Include="Engine\GameManager.cs" />
+    <Compile Include="Engine\IActions.cs" />
+    <Compile Include="Engine\Printer.cs" />
+    <Compile Include="Engine\Program.cs" />
+    <Compile Include="Engine\Subject.cs" />
+    <Compile Include="Engine\World.cs" />
+    <Compile Include="Game\Actions\AttackActions.cs" />
+    <Compile Include="Game\Actions\DestroyActions.cs" />
+    <Compile Include="Game\Actions\DisarmActions.cs" />
+    <Compile Include="Game\Actions\EquipActions.cs" />
+    <Compile Include="Game\Actions\InspectActions.cs" />
+    <Compile Include="Game\Actions\LevelUpActions.cs" />
+    <Compile Include="Game\Actions\NavigateActions.cs" />
+    <Compile Include="Game\Actions\OpenActions.cs" />
+    <Compile Include="Game\Actions\SneakAttackActions.cs" />
+    <Compile Include="Game\Actions\UseActions.cs" />
+    <Compile Include="Game\Equipment.cs" />
+    <Compile Include="Game\Inventory.cs" />
+    <Compile Include="Game\Item.cs" />
+    <Compile Include="Game\Items\Bandage.cs" />
+    <Compile Include="Game\Items\Shield.cs" />
+    <Compile Include="Game\Items\Weapon.cs" />
+    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\Stats.cs" />
+    <Compile Include="Game\SubjectInterfaces\IAttackable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IDestructable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IDisarmable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IEquippable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IExplorable.cs" />
+    <Compile Include="Game\SubjectInterfaces\ILevelUp.cs" />
+    <Compile Include="Game\SubjectInterfaces\INavigateable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IOpenable.cs" />
+    <Compile Include="Game\SubjectInterfaces\ISneakAttackable.cs" />
+    <Compile Include="Game\SubjectInterfaces\IUseable.cs" />
+    <Compile Include="Game\Trap.cs" />
+    <Compile Include="Game\World Subjects\Character.cs" />
+    <Compile Include="Game\World Subjects\Door.cs" />
+    <Compile Include="Game\World Subjects\Enemy.cs" />
+    <Compile Include="Game\World Subjects\Room.cs" />
+    <Compile Include="Game\World Subjects\Treasure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
