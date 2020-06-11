@@ -66,6 +66,9 @@ namespace TextBasedRPG
                 Printer.Print("Speed success!");
                 Printer.Print("You dodge the trap!");
             }
+
+            //trap is removed after being sprung
+            Health = 0;
         }
 
         public bool Destroy(Player player)

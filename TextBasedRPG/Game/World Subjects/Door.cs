@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
@@ -10,8 +6,8 @@ namespace TextBasedRPG
     {
         public Room room;
         private Trap trap;
-        private int destinationX;
-        private int destinationY;
+        public int destinationX;
+        public int destinationY;
 
         public Door(string name, Room room, Random random, int x, int y) : base(name)
         {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
@@ -15,7 +12,7 @@ namespace TextBasedRPG
         public int Y { get; private set; }
 
         private List<Enemy> enemies = new List<Enemy>();
-        private List<Door> doors = new List<Door>();
+        public List<Door> doors = new List<Door>();
         private List<Treasure> treasures = new List<Treasure>();
 
         public Room(string name, int x, int y, Random random) : base(name)
@@ -32,7 +29,7 @@ namespace TextBasedRPG
             int amountOfSubjects = random.Next(1, 4);
             for (int i = 0; i < amountOfSubjects; i++)
             {
-                if (random.Next(0, 100) < 79)
+                if (random.Next(0, 100) < 80)
                 {
                     enemies.Add(new Enemy("Enemy", this, random));
                 }
@@ -41,24 +38,11 @@ namespace TextBasedRPG
                     treasures.Add(new Treasure("Treasure", this, random));
                 }
             }
+        }
 
-            //make doors
-            if(x < World.SizeX -1)
-            {
-                doors.Add(new Door("Door", this, random, X + 1, Y));//east
-            }
-            if(x > 0)
-            {
-                doors.Add(new Door("Door", this, random, X - 1, Y));//west
-            }
-            if(y < World.SizeY -1)
-            {
-                doors.Add(new Door("Door", this, random, X, Y + 1));//north
-            }
-            if (y > 0)
-            {
-                doors.Add(new Door("Door", this, random, X, Y - 1));//south
-            }
+        public void CreateDoor(Random random, int x, int y)
+        {
+            doors.Add(new Door("Door", this, random, x, y));
         }
 
         public void EnemyTurn(Player player)

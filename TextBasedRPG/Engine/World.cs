@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
@@ -28,6 +24,9 @@ namespace TextBasedRPG
                     generatedRooms[i, j] = new Room("Room", i, j, random);
                 }
             }
+
+            HuntAndKill mazeBuilder = new HuntAndKill();
+            mazeBuilder.BuildMaze(generatedRooms, random);
 
             rooms = generatedRooms;
         }

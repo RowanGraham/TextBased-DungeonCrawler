@@ -47,6 +47,8 @@
     <Compile Include="Engine\DECISIONS.cs" />
     <Compile Include="Engine\GameManager.cs" />
     <Compile Include="Engine\IActions.cs" />
+    <Compile Include="Engine\Log.cs" />
+    <Compile Include="Engine\MazeBuilder.cs" />
     <Compile Include="Engine\Printer.cs" />
     <Compile Include="Engine\Program.cs" />
     <Compile Include="Engine\Subject.cs" />
