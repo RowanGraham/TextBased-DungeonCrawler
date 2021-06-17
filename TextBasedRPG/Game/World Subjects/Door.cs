@@ -13,10 +13,25 @@ namespace TextBasedRPG
         {
             this.room = room;
 
-            AddSuffix(x + ", " + y);
-
             destinationX = x;
             destinationY = y;
+
+            if (destinationX > room.X)
+            {
+                AddSuffix("East");
+            }
+            else if (destinationX < room.X)
+            {
+                AddSuffix("West");
+            }
+            else if (destinationY > room.Y)
+            {
+                AddSuffix("North");
+            }
+            else if (destinationY < room.Y)
+            {
+                AddSuffix("South");
+            }
 
             if (random.Next(0, 100) < 50)
             {
